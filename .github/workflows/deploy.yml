@@ -21,7 +21,7 @@ jobs:
           node-version: 22
           cache: pnpm
 
-      - run: pnpm install --frozen-lockfile
+      - run: pnpm config set minimumReleaseAge 0 && pnpm install --frozen-lockfile
 
       - run: pnpm test
       - run: pnpm typecheck
@@ -44,7 +44,7 @@ jobs:
           node-version: 22
           cache: pnpm
 
-      - run: pnpm install --frozen-lockfile
+      - run: pnpm config set minimumReleaseAge 0 && pnpm install --frozen-lockfile
       - run: pnpm build
 
       - uses: cloudflare/wrangler-action@v3
