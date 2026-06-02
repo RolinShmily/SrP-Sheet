@@ -38,8 +38,5 @@
     "typescript": "latest",
     "vitest": "latest",
     "wrangler": "latest"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": ["esbuild", "sharp", "unrs-resolver", "workerd"]
   }
 }

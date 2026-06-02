@@ -1,0 +1,6 @@
+minimumReleaseAge: 0
+onlyBuiltDependencies:
+  - esbuild
+  - sharp
+  - unrs-resolver
+  - workerd
