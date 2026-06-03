@@ -1,21 +1,12 @@
 ---
 title: "Monsters | Love You 3000"
 slug: "monsters-love-you-3000"
-type: "arrangement"
+type: "full-score"
 source: "用户提供谱例"
 summary: "《Monsters | Love You 3000》的吉他谱 PDF 与 Bilibili 演示视频整理页；该 PDF 与同组曲目共用。"
-difficulty: "intermediate"
 instrument: "acoustic-guitar"
 tuning: "E Standard"
 capo: null
-techniques:
-  - "fingerstyle"
-  - "arrangement"
-tags:
-  - "real-song"
-  - "bilibili"
-  - "pdf-sheet"
-  - "shared-pdf"
 featured: false
 publishedAt: "2026-06-03"
 updatedAt: "2026-06-03"

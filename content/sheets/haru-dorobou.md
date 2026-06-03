@@ -1,20 +1,12 @@
 ---
 title: "春泥棒"
 slug: "haru-dorobou"
-type: "arrangement"
+type: "full-score"
 source: "用户提供谱例"
 summary: "《春泥棒》的吉他谱 PDF 与 Bilibili 演示视频整理页，便于对照指法、段落和速度。"
-difficulty: "intermediate"
 instrument: "acoustic-guitar"
 tuning: "E Standard"
 capo: null
-techniques:
-  - "fingerstyle"
-  - "arrangement"
-tags:
-  - "real-song"
-  - "bilibili"
-  - "pdf-sheet"
 featured: true
 publishedAt: "2026-06-03"
 updatedAt: "2026-06-03"

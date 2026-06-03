@@ -4,17 +4,14 @@ import { sheetFrontmatterSchema } from "@/lib/sheet-schema";
 const validSheet = {
   title: "Minor Pentatonic Lick 01",
   slug: "minor-pentatonic-lick-01",
-  type: "lick",
+  type: "full-score",
   source: "Original Study",
-  summary: "A compact phrase for practicing slides and timing.",
-  difficulty: "intermediate",
+  summary: "A complete score with a downloadable PDF and video reference.",
   instrument: "electric-guitar",
   tuning: "E Standard",
   key: "A minor",
   capo: null,
   bpm: 92,
-  techniques: ["slide", "alternate-picking"],
-  tags: ["pentatonic", "lead-guitar"],
   featured: true,
   publishedAt: "2026-06-02",
   updatedAt: "2026-06-02",
@@ -26,8 +23,23 @@ const validSheet = {
 };
 
 describe("sheetFrontmatterSchema", () => {
-  it("parses valid complete sheet metadata", () => {
-    expect(sheetFrontmatterSchema.parse(validSheet).slug).toBe("minor-pentatonic-lick-01");
+  it("parses valid complete sheet metadata and defaults preview to the PDF", () => {
+    const parsed = sheetFrontmatterSchema.parse(validSheet);
+
+    expect(parsed.slug).toBe("minor-pentatonic-lick-01");
+    expect(parsed.preview).toBe("/assets/sheets/minor-pentatonic-lick-01/sheet.pdf");
+  });
+
+  it("accepts only lick and full-score content types", () => {
+    expect(sheetFrontmatterSchema.parse({ ...validSheet, type: "lick" }).type).toBe("lick");
+    expect(sheetFrontmatterSchema.parse({ ...validSheet, type: "full-score" }).type).toBe("full-score");
+    expect(() => sheetFrontmatterSchema.parse({ ...validSheet, type: "arrangement" })).toThrow();
+  });
+
+  it("rejects removed classification fields", () => {
+    expect(() => sheetFrontmatterSchema.parse({ ...validSheet, difficulty: "intermediate" })).toThrow();
+    expect(() => sheetFrontmatterSchema.parse({ ...validSheet, techniques: ["fingerstyle"] })).toThrow();
+    expect(() => sheetFrontmatterSchema.parse({ ...validSheet, tags: ["real-song"] })).toThrow();
   });
 
   it("rejects missing required title", () => {

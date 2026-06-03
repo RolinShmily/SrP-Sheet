@@ -6,13 +6,10 @@ const sheets = [
   {
     title: "Open Chord Warmup",
     slug: "open-chord-warmup",
-    type: "exercise",
-    summary: "A beginner chord switching drill.",
-    difficulty: "beginner",
+    type: "full-score",
+    summary: "A complete chord switching score.",
     instrument: "acoustic-guitar",
     tuning: "E Standard",
-    techniques: ["open-chords"],
-    tags: ["warmup"],
     featured: false,
     publishedAt: "2026-06-02",
     updatedAt: "2026-06-02",
@@ -21,18 +18,17 @@ const sheets = [
     excerpt: "Practice G C D changes.",
     hasVideo: false,
     hasPdf: true,
-    searchText: "open chord warmup beginner warmup open-chords"
+    pdf: "/assets/sheets/open-chord-warmup/sheet.pdf",
+    preview: "/assets/sheets/open-chord-warmup/sheet.pdf",
+    searchText: "open chord warmup complete chord switching score e standard"
   },
   {
     title: "Pentatonic Slide Lick",
     slug: "pentatonic-slide-lick",
     type: "lick",
     summary: "A lead guitar phrase.",
-    difficulty: "intermediate",
     instrument: "electric-guitar",
-    tuning: "E Standard",
-    techniques: ["slide"],
-    tags: ["pentatonic"],
+    tuning: "Drop D",
     featured: true,
     publishedAt: "2026-06-02",
     updatedAt: "2026-06-02",
@@ -41,7 +37,8 @@ const sheets = [
     excerpt: "Slide into the target note.",
     hasVideo: true,
     hasPdf: false,
-    searchText: "pentatonic slide lick lead guitar intermediate slide"
+    preview: undefined,
+    searchText: "pentatonic slide lick lead guitar phrase drop d"
   }
 ] satisfies SheetSummary[];
 
@@ -50,15 +47,16 @@ describe("filterSheets", () => {
     expect(filterSheets(sheets, { query: "PENTATONIC" }).map((sheet) => sheet.slug)).toEqual(["pentatonic-slide-lick"]);
   });
 
-  it("matches tag or technique", () => {
-    expect(filterSheets(sheets, { query: "open-chords" }).map((sheet) => sheet.slug)).toEqual(["open-chord-warmup"]);
+  it("filters by simplified type", () => {
+    expect(filterSheets(sheets, { types: ["lick"] }).map((sheet) => sheet.slug)).toEqual(["pentatonic-slide-lick"]);
   });
 
-  it("filters by difficulty", () => {
-    expect(filterSheets(sheets, { difficulties: ["beginner"] }).map((sheet) => sheet.slug)).toEqual(["open-chord-warmup"]);
+  it("filters by tuning", () => {
+    expect(filterSheets(sheets, { tunings: ["E Standard"] }).map((sheet) => sheet.slug)).toEqual(["open-chord-warmup"]);
   });
 
-  it("combines search and filters", () => {
-    expect(filterSheets(sheets, { query: "slide", difficulties: ["beginner"] })).toEqual([]);
+  it("combines search and attachment filters", () => {
+    expect(filterSheets(sheets, { query: "slide", hasVideo: true }).map((sheet) => sheet.slug)).toEqual(["pentatonic-slide-lick"]);
+    expect(filterSheets(sheets, { query: "slide", hasPdf: true })).toEqual([]);
   });
 });

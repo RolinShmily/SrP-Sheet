@@ -1,21 +1,12 @@
 ---
 title: "晚风"
 slug: "wan-feng"
-type: "arrangement"
+type: "full-score"
 source: "用户提供谱例"
 summary: "《晚风》的吉他谱 PDF 与 Bilibili 演示视频整理页；该 PDF 与同组曲目共用。"
-difficulty: "intermediate"
 instrument: "acoustic-guitar"
 tuning: "E Standard"
 capo: null
-techniques:
-  - "fingerstyle"
-  - "arrangement"
-tags:
-  - "real-song"
-  - "bilibili"
-  - "pdf-sheet"
-  - "shared-pdf"
 featured: false
 publishedAt: "2026-06-03"
 updatedAt: "2026-06-03"

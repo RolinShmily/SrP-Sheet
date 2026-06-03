@@ -1,21 +1,14 @@
 ---
 title: "Fingerstyle Arp 01"
 slug: "fingerstyle-arp-01"
-type: "exercise"
+type: "lick"
 source: "Original Practice Study"
 summary: "An intermediate fingerstyle arpeggio fragment focused on thumb independence and sustained top notes."
-difficulty: "intermediate"
 instrument: "acoustic-guitar"
 tuning: "E Standard"
 key: "C major"
 capo: null
 bpm: 68
-techniques:
-  - "fingerstyle"
-  - "arpeggio"
-tags:
-  - "fingerstyle"
-  - "independence"
 featured: true
 publishedAt: "2026-06-02"
 updatedAt: "2026-06-02"

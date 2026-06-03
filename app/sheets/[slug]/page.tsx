@@ -5,6 +5,7 @@ import { BilibiliEmbed } from "@/components/bilibili-embed";
 import { PageShell } from "@/components/page-shell";
 import { SheetCard } from "@/components/sheet-card";
 import { SheetMetaGrid } from "@/components/sheet-meta-grid";
+import { SheetPdfPreview } from "@/components/sheet-pdf-preview";
 import { getAllSheets, getSheetBySlug, toSheetSummary } from "@/lib/content";
 import { getRelatedSheets } from "@/lib/related";
 
@@ -57,18 +58,14 @@ export default async function SheetDetailPage({ params }: SheetPageProps) {
           <article className="min-w-0 space-y-8">
             <SheetMetaGrid sheet={sheet} />
             {sheet.bilibili ? <BilibiliEmbed video={sheet.bilibili} /> : null}
+            {sheet.pdf ? <SheetPdfPreview pdf={sheet.pdf} preview={sheet.preview} /> : null}
             <section className="sheet-prose rounded-[30px] border border-[var(--line)] bg-[rgba(251,246,236,0.86)] p-6 shadow-[var(--shadow-soft)] sm:p-8" dangerouslySetInnerHTML={{ __html: sheet.html }} />
-            {(sheet.pdf || sheet.images.length > 0) ? (
+            {sheet.images.length > 0 ? (
               <section className="rounded-[28px] border border-[var(--line)] bg-[rgba(251,246,236,0.78)] p-6 shadow-[var(--shadow-soft)]">
                 <h2 className="font-display text-2xl font-semibold">附件</h2>
                 <div className="mt-4 flex flex-wrap gap-3">
-                  {sheet.pdf ? (
-                    <a href={sheet.pdf} className="rounded-full border border-[var(--line)] px-4 py-2 text-sm font-semibold text-[var(--wood-dark)] underline decoration-[var(--brass)] underline-offset-4">
-                      下载 PDF
-                    </a>
-                  ) : null}
                   {sheet.images.map((image) => (
-                    <a key={image.src} href={image.src} className="rounded-full border border-[var(--line)] px-4 py-2 text-sm font-semibold text-[var(--wood-dark)] underline decoration-[var(--brass)] underline-offset-4">
+                    <a key={image.src} href={image.src} target="_blank" rel="noreferrer" className="rounded-full border border-[var(--line)] px-4 py-2 text-sm font-semibold text-[var(--wood-dark)] underline decoration-[var(--brass)] underline-offset-4">
                       {image.alt}
                     </a>
                   ))}

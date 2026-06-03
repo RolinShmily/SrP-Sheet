@@ -1,15 +1,10 @@
 import Link from "next/link";
-import { DifficultyBadge } from "@/components/difficulty-badge";
 import type { SheetSummary } from "@/lib/sheet-schema";
 import { cn } from "@/lib/utils";
 
 const typeLabels: Record<SheetSummary["type"], string> = {
-  exercise: "练习",
-  riff: "Riff",
   lick: "乐句",
-  song: "曲目",
-  arrangement: "改编",
-  original: "原创"
+  "full-score": "整谱"
 };
 
 interface SheetCardProps {
@@ -32,7 +27,6 @@ export function SheetCard({ sheet, featured = false }: SheetCardProps) {
         <span>{sheet.tuning}</span>
       </div>
       <div className="mb-3 flex flex-wrap items-center gap-2">
-        <DifficultyBadge difficulty={sheet.difficulty} />
         {sheet.hasVideo ? <span className="rounded-full border border-[var(--line)] px-2.5 py-1 text-xs font-semibold text-[var(--wood-dark)]">演示视频</span> : null}
         {sheet.hasPdf ? <span className="rounded-full border border-[var(--line)] px-2.5 py-1 text-xs font-semibold text-[var(--wood-dark)]">PDF</span> : null}
       </div>
@@ -43,13 +37,6 @@ export function SheetCard({ sheet, featured = false }: SheetCardProps) {
       </h3>
       {sheet.source ? <p className="mt-2 text-sm font-semibold text-[var(--wood)]">{sheet.source}</p> : null}
       <p className="mt-3 text-sm leading-6 text-[var(--ink-muted)]">{sheet.summary}</p>
-      <div className="mt-5 flex flex-wrap gap-2">
-        {sheet.tags.slice(0, featured ? 5 : 4).map((tag) => (
-          <span key={tag} className="rounded-full border border-[var(--line)] bg-[rgba(244,234,216,0.75)] px-2.5 py-1 text-xs font-medium text-[var(--ink-muted)]">
-            #{tag}
-          </span>
-        ))}
-      </div>
     </article>
   );
 }

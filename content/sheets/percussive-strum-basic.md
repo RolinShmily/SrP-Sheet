@@ -1,21 +1,14 @@
 ---
 title: "Percussive Strum Basic"
 slug: "percussive-strum-basic"
-type: "exercise"
+type: "lick"
 source: "Original Practice Study"
 summary: "A beginner muted-strum pattern for building groove without leaving E Standard tuning."
-difficulty: "beginner"
 instrument: "acoustic-guitar"
 tuning: "E Standard"
 key: "A minor"
 capo: null
 bpm: 84
-techniques:
-  - "strumming"
-  - "muting"
-tags:
-  - "rhythm"
-  - "groove"
 featured: true
 publishedAt: "2026-06-02"
 updatedAt: "2026-06-02"

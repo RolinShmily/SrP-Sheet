@@ -1,22 +1,14 @@
 ---
 title: "Hybrid Picking Study"
 slug: "hybrid-picking-study"
-type: "exercise"
+type: "lick"
 source: "Original Practice Study"
 summary: "An advanced string-skipping study that combines pick attacks with plucked upper-string accents."
-difficulty: "advanced"
 instrument: "electric-guitar"
 tuning: "E Standard"
 key: "E minor"
 capo: null
 bpm: 108
-techniques:
-  - "hybrid-picking"
-  - "string-skipping"
-  - "palm-muting"
-tags:
-  - "technique"
-  - "advanced"
 featured: false
 publishedAt: "2026-06-02"
 updatedAt: "2026-06-02"

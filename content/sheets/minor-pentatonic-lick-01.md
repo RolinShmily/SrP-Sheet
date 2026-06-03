@@ -4,19 +4,11 @@ slug: "minor-pentatonic-lick-01"
 type: "lick"
 source: "Original Practice Study"
 summary: "A compact A minor pentatonic lick for practicing slides, bends, and phrase endings."
-difficulty: "intermediate"
 instrument: "electric-guitar"
 tuning: "E Standard"
 key: "A minor"
 capo: null
 bpm: 92
-techniques:
-  - "slide"
-  - "alternate-picking"
-  - "bend"
-tags:
-  - "pentatonic"
-  - "lead-guitar"
 featured: false
 publishedAt: "2026-06-02"
 updatedAt: "2026-06-02"

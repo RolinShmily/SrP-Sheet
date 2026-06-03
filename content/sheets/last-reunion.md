@@ -1,22 +1,12 @@
 ---
 title: "Last Reunion"
 slug: "last-reunion"
-type: "arrangement"
+type: "full-score"
 source: "用户提供谱例"
 summary: "《Last Reunion》的吉他谱 PDF 与 Bilibili 多 P 演示视频整理页，对应 p=10。"
-difficulty: "advanced"
 instrument: "acoustic-guitar"
 tuning: "E Standard"
 capo: null
-techniques:
-  - "fingerstyle"
-  - "arrangement"
-tags:
-  - "real-song"
-  - "bilibili"
-  - "pdf-sheet"
-  - "multi-page-video"
-  - "shared-pdf"
 featured: false
 publishedAt: "2026-06-03"
 updatedAt: "2026-06-03"

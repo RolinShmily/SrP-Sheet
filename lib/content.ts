@@ -12,12 +12,9 @@ function createSearchText(sheet: Sheet): string {
     sheet.source,
     sheet.summary,
     sheet.type,
-    sheet.difficulty,
     sheet.instrument,
     sheet.tuning,
     sheet.key,
-    sheet.techniques.join(" "),
-    sheet.tags.join(" "),
     sheet.excerpt
   ]
     .filter(Boolean)
@@ -65,19 +62,17 @@ export function toSheetSummary(sheet: Sheet): SheetSummary {
     type: sheet.type,
     source: sheet.source,
     summary: sheet.summary,
-    difficulty: sheet.difficulty,
     instrument: sheet.instrument,
     tuning: sheet.tuning,
     key: sheet.key,
     capo: sheet.capo,
     bpm: sheet.bpm,
-    techniques: sheet.techniques,
-    tags: sheet.tags,
     featured: sheet.featured,
     publishedAt: sheet.publishedAt,
     updatedAt: sheet.updatedAt,
     cover: sheet.cover,
     pdf: sheet.pdf,
+    preview: sheet.preview,
     images: sheet.images,
     bilibili: sheet.bilibili,
     rights: sheet.rights,
@@ -94,11 +89,8 @@ export async function getSheetSummaries(): Promise<SheetSummary[]> {
 }
 
 export interface SheetFacets {
-  difficulties: string[];
   types: string[];
   tunings: string[];
-  tags: string[];
-  techniques: string[];
 }
 
 function uniqueSorted(values: string[]): string[] {
@@ -107,10 +99,7 @@ function uniqueSorted(values: string[]): string[] {
 
 export function buildSheetFacets(sheets: readonly SheetSummary[]): SheetFacets {
   return {
-    difficulties: uniqueSorted(sheets.map((sheet) => sheet.difficulty)),
     types: uniqueSorted(sheets.map((sheet) => sheet.type)),
-    tunings: uniqueSorted(sheets.map((sheet) => sheet.tuning)),
-    tags: uniqueSorted(sheets.flatMap((sheet) => sheet.tags)),
-    techniques: uniqueSorted(sheets.flatMap((sheet) => sheet.techniques))
+    tunings: uniqueSorted(sheets.map((sheet) => sheet.tuning))
   };
 }

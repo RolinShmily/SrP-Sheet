@@ -1,21 +1,14 @@
 ---
 title: "Demo With Bilibili"
 slug: "demo-with-bilibili"
-type: "original"
+type: "lick"
 source: "Original Demo Sketch"
 summary: "A short original demo sketch showing how SrP-Sheet pairs notation notes with a Bilibili performance reference."
-difficulty: "intermediate"
 instrument: "electric-guitar"
 tuning: "E Standard"
 key: "D minor"
 capo: null
 bpm: 96
-techniques:
-  - "legato"
-  - "vibrato"
-tags:
-  - "demo-video"
-  - "original"
 featured: false
 publishedAt: "2026-06-02"
 updatedAt: "2026-06-02"

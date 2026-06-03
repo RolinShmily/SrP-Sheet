@@ -1,21 +1,12 @@
 ---
 title: "The Right Path"
 slug: "the-right-path"
-type: "arrangement"
+type: "full-score"
 source: "用户提供谱例"
 summary: "《The Right Path》的吉他谱 PDF 与 Bilibili 多 P 演示视频整理页，对应 p=1。"
-difficulty: "intermediate"
 instrument: "acoustic-guitar"
 tuning: "E Standard"
 capo: null
-techniques:
-  - "fingerstyle"
-  - "arrangement"
-tags:
-  - "real-song"
-  - "bilibili"
-  - "pdf-sheet"
-  - "multi-page-video"
 featured: true
 publishedAt: "2026-06-03"
 updatedAt: "2026-06-03"

@@ -69,12 +69,30 @@ describe("sheet content loader", () => {
     expect(new Set([monsters?.pdf, chunJiaoYuZhiMing?.pdf, wanFeng?.pdf])).toHaveLength(1);
   });
 
-  it("builds facets from validated sheet metadata", async () => {
+  it("builds only simplified public facets", async () => {
     const facets = buildSheetFacets(await getSheetSummaries());
 
-    expect(facets.difficulties).toEqual(["advanced", "beginner", "intermediate"]);
-    expect(facets.tags).toContain("warmup");
-    expect(facets.techniques).toContain("fingerstyle");
+    expect(facets).toEqual({
+      types: ["full-score", "lick"],
+      tunings: ["E Standard"]
+    });
+    expect("difficulties" in facets).toBe(false);
+    expect("tags" in facets).toBe(false);
+    expect("techniques" in facets).toBe(false);
+  });
+
+  it("uses only simplified types and derives previews from PDFs", async () => {
+    const summaries = await getSheetSummaries();
+
+    expect(new Set(summaries.map((sheet) => sheet.type))).toEqual(new Set(["full-score", "lick"]));
+    expect(summaries.every((sheet) => !("difficulty" in sheet) && !("tags" in sheet) && !("techniques" in sheet))).toBe(true);
+
+    for (const expected of realSongExpectations) {
+      const sheet = await getSheetBySlug(expected.slug);
+
+      expect(sheet?.type).toBe("full-score");
+      expect(sheet?.preview).toBe(expected.pdf);
+    }
   });
 
   it("returns a detail sheet with rendered markdown and excerpt", async () => {

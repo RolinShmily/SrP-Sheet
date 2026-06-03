@@ -1,21 +1,12 @@
 ---
 title: "Love is Gone"
 slug: "love-is-gone"
-type: "arrangement"
+type: "full-score"
 source: "用户提供谱例"
 summary: "《Love is Gone》的吉他谱 PDF 与 Bilibili 演示视频整理页；该 PDF 与同组曲目共用。"
-difficulty: "intermediate"
 instrument: "acoustic-guitar"
 tuning: "E Standard"
 capo: null
-techniques:
-  - "fingerstyle"
-  - "arrangement"
-tags:
-  - "real-song"
-  - "bilibili"
-  - "pdf-sheet"
-  - "shared-pdf"
 featured: false
 publishedAt: "2026-06-03"
 updatedAt: "2026-06-03"
