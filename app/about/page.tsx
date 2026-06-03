@@ -20,7 +20,7 @@ export default function AboutPage() {
             <p>站内谱例用于个人学习与练习索引。如果你认为某个 PDF、视频链接或文字说明涉及权利问题，请联系站点维护者并提供作品名、页面链接和权利说明；确认后会调整、移除或补充必要说明。</p>
           </InfoCard>
         </div>
-        <Link href="/sheets/" className="mt-10 inline-flex rounded-full bg-[var(--wood-dark)] px-6 py-3 font-semibold text-[#fff8e8] shadow-[var(--shadow-tight)] ring-1 ring-[rgba(255,248,232,0.35)]">
+        <Link href="/sheets/" className="mt-10 inline-flex srp-primary-cta rounded-full px-6 py-3 shadow-[var(--shadow-tight)]">
           返回谱例库
         </Link>
       </PageShell>
