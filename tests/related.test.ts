@@ -17,7 +17,7 @@ function sheet(slug: string, overrides: Partial<SheetSummary> = {}): SheetSummar
     excerpt: slug,
     hasVideo: false,
     hasPdf: false,
-    preview: undefined,
+    preview: "",
     searchText: slug,
     ...overrides
   };

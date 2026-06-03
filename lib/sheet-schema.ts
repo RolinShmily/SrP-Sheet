@@ -4,14 +4,15 @@ const dateString = z.string().regex(/^\d{4}-\d{2}-\d{2}$/);
 const slug = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
 const assetPath = z.string().regex(/^\/assets\/sheets\/.+/);
 const pdfPath = z.string().regex(/^\/assets\/sheets\/.+\.pdf$/);
-const previewPath = z.string().regex(/^\/assets\/sheets\/.+\.(?:png|jpg|jpeg|webp)$/);
+const previewPath = z.union([z.literal(""), z.string().regex(/^\/assets\/sheets\/.+\.(?:png|jpg|jpeg|webp)$/)]);
 
-export const bilibiliVideoSchema = z.object({
-  bvid: z.string().regex(/^BV[0-9A-Za-z]{10}$/),
-  page: z.number().int().positive().default(1),
-  start: z.number().int().nonnegative().default(0),
-  title: z.string().min(1)
-});
+export const bilibiliVideoSchema = z
+  .object({
+    bvid: z.string().regex(/^BV[0-9A-Za-z]{10}$/),
+    page: z.number().int().positive().default(1),
+    start: z.number().int().nonnegative().default(0)
+  })
+  .strict();
 
 export const sheetImageSchema = z.object({
   src: assetPath,
@@ -33,7 +34,7 @@ export const sheetFrontmatterSchema = z
     publishedAt: dateString,
     cover: assetPath.optional(),
     pdf: pdfPath.optional(),
-    preview: previewPath.optional(),
+    preview: previewPath.default(""),
     images: z.array(sheetImageSchema).default([]),
     bilibili: bilibiliVideoSchema.optional(),
     rights: z.string().min(1)

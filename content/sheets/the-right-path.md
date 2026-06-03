@@ -14,6 +14,5 @@ bilibili:
   bvid: "BV1Pt4y1v7Bb"
   page: 1
   start: 0
-  title: "The Right Path"
 rights: "用户提供的学习用途谱例与公开 Bilibili 演示链接；如涉及权利问题请联系移除。"
 ---

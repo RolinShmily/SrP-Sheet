@@ -14,6 +14,5 @@ bilibili:
   bvid: "BV1Pt4y1v7Bb"
   page: 3
   start: 0
-  title: "烟袋斜街"
 rights: "用户提供的学习用途谱例与公开 Bilibili 演示链接；如涉及权利问题请联系移除。"
 ---

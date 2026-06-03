@@ -14,6 +14,5 @@ bilibili:
   bvid: "BV1WQ4y1f7fr"
   page: 1
   start: 0
-  title: "Mood"
 rights: "用户提供的学习用途谱例与公开 Bilibili 演示链接；如涉及权利问题请联系移除。"
 ---

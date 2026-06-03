@@ -14,6 +14,5 @@ bilibili:
   bvid: "BV1S64y1H7bq"
   page: 1
   start: 0
-  title: "Merry Christmas, Mr.Lawrence"
 rights: "用户提供的学习用途谱例与公开 Bilibili 演示链接；如涉及权利问题请联系移除。"
 ---

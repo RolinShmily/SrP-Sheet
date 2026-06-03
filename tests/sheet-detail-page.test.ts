@@ -8,4 +8,10 @@ describe("sheet detail page body rendering", () => {
     expect(source).not.toContain("dangerouslySetInnerHTML");
     expect(source).not.toContain("sheet-prose");
   });
+
+  it("renders the sheet preview only when both PDF and preview metadata are present", () => {
+    const source = readFileSync("app/sheets/[slug]/page.tsx", "utf8");
+
+    expect(source).toContain("sheet.pdf && sheet.preview");
+  });
 });

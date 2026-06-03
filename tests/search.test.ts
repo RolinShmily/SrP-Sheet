@@ -35,7 +35,7 @@ const sheets = [
     excerpt: "Slide into the target note.",
     hasVideo: true,
     hasPdf: false,
-    preview: undefined,
+    preview: "",
     searchText: "pentatonic slide lick lead guitar phrase drop d"
   }
 ] satisfies SheetSummary[];

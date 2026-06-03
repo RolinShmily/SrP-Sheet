@@ -17,7 +17,7 @@ const validSheet = {
   pdf: "/assets/sheets/minor-pentatonic-lick-01/sheet.pdf",
   preview: "/assets/sheets/minor-pentatonic-lick-01/preview.png",
   images: [{ src: "/assets/sheets/minor-pentatonic-lick-01/page-1.webp", alt: "Sheet page one" }],
-  bilibili: { bvid: "BV1B7411m7LV", page: 1, start: 0, title: "Demo" },
+  bilibili: { bvid: "BV1B7411m7LV", page: 1, start: 0 },
   rights: "Original educational example."
 };
 
@@ -28,6 +28,16 @@ describe("sheetFrontmatterSchema", () => {
     expect(parsed.slug).toBe("minor-pentatonic-lick-01");
     expect(parsed.preview).toBe("/assets/sheets/minor-pentatonic-lick-01/preview.png");
     expect(() => sheetFrontmatterSchema.parse({ ...validSheet, preview: "/assets/sheets/minor-pentatonic-lick-01/sheet.pdf" })).toThrow();
+  });
+
+  it("accepts an empty preview value for sheets without preview images", () => {
+    expect(sheetFrontmatterSchema.parse({ ...validSheet, preview: "" }).preview).toBe("");
+  });
+
+  it("defaults missing preview metadata to an empty string", () => {
+    const withoutPreview = { ...validSheet, preview: undefined };
+
+    expect(sheetFrontmatterSchema.parse(withoutPreview).preview).toBe("");
   });
 
   it("accepts only lick and full-score content types", () => {
@@ -41,6 +51,7 @@ describe("sheetFrontmatterSchema", () => {
     expect(() => sheetFrontmatterSchema.parse({ ...validSheet, techniques: ["fingerstyle"] })).toThrow();
     expect(() => sheetFrontmatterSchema.parse({ ...validSheet, tags: ["real-song"] })).toThrow();
     expect(() => sheetFrontmatterSchema.parse({ ...validSheet, source: "用户提供谱例" })).toThrow();
+    expect(() => sheetFrontmatterSchema.parse({ ...validSheet, bilibili: { bvid: "BV1B7411m7LV", page: 1, start: 0, title: "Demo" } })).toThrow();
   });
 
   it("rejects missing required title", () => {
