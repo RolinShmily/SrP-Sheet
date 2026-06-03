@@ -7,7 +7,7 @@ instrument: "acoustic-guitar"
 tuning: "E Standard"
 capo: null
 featured: false
-publishedAt: "2026-06-03"
+publishedAt: "2020-11-21"
 pdf: "/assets/sheets/pdf/last-reunion-san-ye-dong-jing-bu-tai-re.pdf"
 preview: "/assets/sheets/previews/last-reunion.png"
 bilibili:

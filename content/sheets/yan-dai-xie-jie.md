@@ -5,9 +5,9 @@ type: "full-score"
 summary: "《烟袋斜街》的吉他谱 PDF 与 Bilibili 多 P 演示视频整理页，对应 p=3。"
 instrument: "acoustic-guitar"
 tuning: "E Standard"
-capo: null
+capo: 6品
 featured: false
-publishedAt: "2026-06-03"
+publishedAt: "2020-11-21"
 pdf: "/assets/sheets/pdf/yan-dai-xie-jie.pdf"
 preview: "/assets/sheets/previews/yan-dai-xie-jie.png"
 bilibili:

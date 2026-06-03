@@ -7,7 +7,7 @@ instrument: "acoustic-guitar"
 tuning: "E Standard"
 capo: 3品
 featured: true
-publishedAt: "2026-06-03"
+publishedAt: "2025-01-20"
 pdf: "/assets/sheets/pdf/haru-dorobou.pdf"
 preview: "/assets/sheets/previews/haru-dorobou.png"
 bilibili:

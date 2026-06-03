@@ -5,9 +5,9 @@ type: "lick"
 summary: "《春娇与志明》的吉他谱 PDF 与 Bilibili 演示视频整理页；该 PDF 与同组曲目共用。"
 instrument: "acoustic-guitar"
 tuning: "E Standard"
-capo: null
+capo: 4品
 featured: false
-publishedAt: "2026-06-03"
+publishedAt: "2021-08-02"
 pdf: "/assets/sheets/pdf/monsters-way-back-home-chun-jiao-yu-zhi-ming-wan-feng.pdf"
 preview: "/assets/sheets/previews/chun-jiao-yu-zhi-ming.png"
 bilibili:

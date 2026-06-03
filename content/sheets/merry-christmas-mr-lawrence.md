@@ -7,7 +7,7 @@ instrument: "electric-guitar"
 tuning: "E Standard"
 capo: null
 featured: true
-publishedAt: "2026-06-03"
+publishedAt: "2023-12-25"
 pdf: "/assets/sheets/pdf/merry-christmas-mr-lawrence.pdf"
 preview: "/assets/sheets/previews/merry-christmas-mr-lawrence.png"
 bilibili:

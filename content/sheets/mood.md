@@ -7,7 +7,7 @@ instrument: "acoustic-guitar"
 tuning: "E Standard"
 capo: null
 featured: false
-publishedAt: "2026-06-03"
+publishedAt: "2021-08-03"
 pdf: "/assets/sheets/pdf/xiang-yu-zui-tian-qing-ge-duan-xian-mood.pdf"
 preview: "/assets/sheets/previews/mood.png"
 bilibili:

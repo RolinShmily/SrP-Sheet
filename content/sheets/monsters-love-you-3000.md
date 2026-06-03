@@ -5,9 +5,9 @@ type: "lick"
 summary: "《Monsters | Love You 3000》的吉他谱 PDF 与 Bilibili 演示视频整理页；该 PDF 与同组曲目共用。"
 instrument: "acoustic-guitar"
 tuning: "E Standard"
-capo: null
+capo: 1品
 featured: false
-publishedAt: "2026-06-03"
+publishedAt: "2021-08-04"
 pdf: "/assets/sheets/pdf/monsters-way-back-home-chun-jiao-yu-zhi-ming-wan-feng.pdf"
 preview: "/assets/sheets/previews/monsters-love-you-3000.png"
 bilibili:
