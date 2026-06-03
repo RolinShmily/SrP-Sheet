@@ -8,10 +8,7 @@ export function SheetPdfPreview({ pdf, preview, title }: SheetPdfPreviewProps) {
   return (
     <section className="overflow-hidden rounded-[30px] border border-[var(--line)] bg-[rgba(251,246,236,0.9)] shadow-[var(--shadow-soft)]">
       <div className="flex flex-col gap-3 border-b border-[var(--line)] p-5 sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <p className="text-xs font-bold uppercase tracking-[0.22em] text-[var(--wood)]">谱例预览</p>
-          <h2 className="mt-1 font-display text-2xl font-semibold">PNG 预览图</h2>
-        </div>
+        <h2 className="font-display text-4xl font-semibold tracking-[-0.03em]">谱例预览</h2>
         <div className="flex flex-wrap gap-2">
           <a href={pdf} download target="_blank" rel="noreferrer" className="srp-primary-cta w-fit rounded-full px-4 py-2 text-sm shadow-[var(--shadow-tight)] transition hover:-translate-y-0.5">
             下载 PDF

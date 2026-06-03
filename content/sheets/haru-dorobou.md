@@ -9,11 +9,9 @@ capo: 3品
 featured: true
 publishedAt: "2026-06-03"
 pdf: "/assets/sheets/pdf/haru-dorobou.pdf"
-preview: "/assets/sheets/previews/haru-dorobou.png"
 bilibili:
   bvid: "BV1kzwpeaE4h"
   page: 1
   start: 0
-  title: "春泥棒"
 rights: "用户提供的学习用途谱例与公开 Bilibili 演示链接；如涉及权利问题请联系移除。"
 ---

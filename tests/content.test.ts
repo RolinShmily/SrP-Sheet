@@ -37,7 +37,7 @@ describe("sheet content loader", () => {
       "percussive-strum-basic",
       "warmup-open-chords"
     ]));
-    expect(summaries.every((sheet) => sheet.hasPdf && sheet.pdf && sheet.preview?.endsWith(".png"))).toBe(true);
+    expect(summaries.every((sheet) => sheet.hasPdf && sheet.pdf && sheet.preview === undefined)).toBe(true);
     expect(summaries.every((sheet) => !("source" in sheet) && !("updatedAt" in sheet))).toBe(true);
 
     const first = await getSheetBySlug("haru-dorobou");
@@ -51,7 +51,8 @@ describe("sheet content loader", () => {
       const sheet = await getSheetBySlug(expected.slug);
 
       expect(sheet?.title).toBe(expected.title);
-      expect(sheet?.bilibili).toMatchObject({ bvid: expected.bvid, page: expected.page, start: 0, title: expected.title });
+      expect(sheet?.bilibili).toMatchObject({ bvid: expected.bvid, page: expected.page, start: 0 });
+      expect("title" in sheet!.bilibili!).toBe(false);
       expect(sheet?.pdf).toBe(expected.pdf);
       expect(existsSync(path.join(process.cwd(), "public", expected.pdf.slice(1)))).toBe(true);
     }
@@ -85,7 +86,7 @@ describe("sheet content loader", () => {
     expect("techniques" in facets).toBe(false);
   });
 
-  it("uses only simplified types and PNG previews", async () => {
+  it("uses only simplified types and no default previews", async () => {
     const summaries = await getSheetSummaries();
 
     expect(new Set(summaries.map((sheet) => sheet.type))).toEqual(new Set(["full-score", "lick"]));
@@ -95,8 +96,7 @@ describe("sheet content loader", () => {
       const sheet = await getSheetBySlug(expected.slug);
 
       expect(["full-score", "lick"]).toContain(sheet?.type);
-      expect(sheet?.preview?.endsWith(".png")).toBe(true);
-      expect(existsSync(path.join(process.cwd(), "public", sheet!.preview!.slice(1)))).toBe(true);
+      expect(sheet?.preview).toBeUndefined();
     }
   });
 

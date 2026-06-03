@@ -16,7 +16,7 @@ const summary = {
   pdf: "/assets/sheets/pdf/haru-dorobou.pdf",
   preview: "/assets/sheets/previews/haru-dorobou.png",
   images: [],
-  bilibili: { bvid: "BV1kzwpeaE4h", page: 1, start: 0, title: "春泥棒" },
+  bilibili: { bvid: "BV1kzwpeaE4h", page: 1, start: 0 },
   rights: "学习用途。",
   excerpt: "练习说明",
   hasVideo: true,

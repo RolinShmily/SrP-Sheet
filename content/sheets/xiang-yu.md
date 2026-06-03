@@ -9,11 +9,9 @@ capo: null
 featured: false
 publishedAt: "2026-06-03"
 pdf: "/assets/sheets/pdf/xiang-yu-zui-tian-qing-ge-duan-xian-mood.pdf"
-preview: "/assets/sheets/previews/xiang-yu.png"
 bilibili:
   bvid: "BV1Pt4y1v7Bb"
   page: 7
   start: 0
-  title: "像鱼"
 rights: "用户提供的学习用途谱例与公开 Bilibili 演示链接；如涉及权利问题请联系移除。"
 ---

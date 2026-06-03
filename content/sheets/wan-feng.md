@@ -9,11 +9,9 @@ capo: null
 featured: false
 publishedAt: "2026-06-03"
 pdf: "/assets/sheets/pdf/monsters-way-back-home-chun-jiao-yu-zhi-ming-wan-feng.pdf"
-preview: "/assets/sheets/previews/wan-feng.png"
 bilibili:
   bvid: "BV1154y1Y7Rn"
   page: 1
   start: 0
-  title: "晚风"
 rights: "用户提供的学习用途谱例与公开 Bilibili 演示链接；如涉及权利问题请联系移除。"
 ---

@@ -9,11 +9,9 @@ capo: null
 featured: false
 publishedAt: "2026-06-03"
 pdf: "/assets/sheets/pdf/collapsing-world-creep-free-lucky-love-is-gone-wonderful-u.pdf"
-preview: "/assets/sheets/previews/love-is-gone.png"
 bilibili:
   bvid: "BV1KM4y1V7zJ"
   page: 1
   start: 0
-  title: "Love is Gone"
 rights: "用户提供的学习用途谱例与公开 Bilibili 演示链接；如涉及权利问题请联系移除。"
 ---

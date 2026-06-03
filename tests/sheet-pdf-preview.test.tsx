@@ -8,6 +8,8 @@ describe("SheetPdfPreview", () => {
 
     expect(html).toContain("/assets/sheets/previews/haru-dorobou.png");
     expect(html).toContain("alt=\"春泥棒 谱例预览\"");
+    expect(html).toContain("font-display text-4xl");
+    expect(html).not.toContain("PNG 预览图");
     expect(html).not.toContain("application/pdf");
     expect(html).not.toContain("#page=1");
     expect(html).toContain("download=\"\"");

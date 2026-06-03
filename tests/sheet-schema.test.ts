@@ -17,7 +17,7 @@ const validSheet = {
   pdf: "/assets/sheets/minor-pentatonic-lick-01/sheet.pdf",
   preview: "/assets/sheets/minor-pentatonic-lick-01/preview.png",
   images: [{ src: "/assets/sheets/minor-pentatonic-lick-01/page-1.webp", alt: "Sheet page one" }],
-  bilibili: { bvid: "BV1B7411m7LV", page: 1, start: 0, title: "Demo" },
+  bilibili: { bvid: "BV1B7411m7LV", page: 1, start: 0 },
   rights: "Original educational example."
 };
 
@@ -41,6 +41,7 @@ describe("sheetFrontmatterSchema", () => {
     expect(() => sheetFrontmatterSchema.parse({ ...validSheet, techniques: ["fingerstyle"] })).toThrow();
     expect(() => sheetFrontmatterSchema.parse({ ...validSheet, tags: ["real-song"] })).toThrow();
     expect(() => sheetFrontmatterSchema.parse({ ...validSheet, source: "用户提供谱例" })).toThrow();
+    expect(() => sheetFrontmatterSchema.parse({ ...validSheet, bilibili: { bvid: "BV1B7411m7LV", page: 1, start: 0, title: "Demo" } })).toThrow();
   });
 
   it("rejects missing required title", () => {

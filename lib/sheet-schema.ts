@@ -6,12 +6,13 @@ const assetPath = z.string().regex(/^\/assets\/sheets\/.+/);
 const pdfPath = z.string().regex(/^\/assets\/sheets\/.+\.pdf$/);
 const previewPath = z.string().regex(/^\/assets\/sheets\/.+\.(?:png|jpg|jpeg|webp)$/);
 
-export const bilibiliVideoSchema = z.object({
-  bvid: z.string().regex(/^BV[0-9A-Za-z]{10}$/),
-  page: z.number().int().positive().default(1),
-  start: z.number().int().nonnegative().default(0),
-  title: z.string().min(1)
-});
+export const bilibiliVideoSchema = z
+  .object({
+    bvid: z.string().regex(/^BV[0-9A-Za-z]{10}$/),
+    page: z.number().int().positive().default(1),
+    start: z.number().int().nonnegative().default(0)
+  })
+  .strict();
 
 export const sheetImageSchema = z.object({
   src: assetPath,
