@@ -58,8 +58,7 @@ export default async function SheetDetailPage({ params }: SheetPageProps) {
           <article className="min-w-0 space-y-8">
             <SheetMetaGrid sheet={sheet} />
             {sheet.bilibili ? <BilibiliEmbed video={sheet.bilibili} /> : null}
-            {sheet.pdf ? <SheetPdfPreview pdf={sheet.pdf} preview={sheet.preview} /> : null}
-            <section className="sheet-prose rounded-[30px] border border-[var(--line)] bg-[rgba(251,246,236,0.86)] p-6 shadow-[var(--shadow-soft)] sm:p-8" dangerouslySetInnerHTML={{ __html: sheet.html }} />
+            {sheet.pdf && sheet.preview ? <SheetPdfPreview pdf={sheet.pdf} preview={sheet.preview} title={sheet.title} /> : null}
             {sheet.images.length > 0 ? (
               <section className="rounded-[28px] border border-[var(--line)] bg-[rgba(251,246,236,0.78)] p-6 shadow-[var(--shadow-soft)]">
                 <h2 className="font-display text-2xl font-semibold">附件</h2>

@@ -30,7 +30,7 @@ export default async function HomePage() {
             <h1 className="font-display text-[clamp(3.2rem,9vw,7.5rem)] font-semibold leading-[0.88] tracking-[-0.05em]">SrP-Sheet</h1>
             <p className="mt-6 max-w-2xl text-xl leading-9 text-[var(--ink-muted)]">一个有谱纸质感的吉他谱例下载库：整理乐句与整谱，配 PDF 预览和 Bilibili 演示视频参考，全部由 Markdown 维护。</p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/sheets/" className="rounded-full bg-[var(--wood)] px-6 py-3 font-semibold text-[var(--paper-soft)] shadow-[var(--shadow-tight)] transition hover:-translate-y-0.5">
+              <Link href="/sheets/" className="rounded-full bg-[var(--wood-dark)] px-6 py-3 font-semibold text-[#fff8e8] shadow-[var(--shadow-tight)] ring-1 ring-[rgba(255,248,232,0.35)] transition hover:-translate-y-0.5">
                 浏览谱例库
               </Link>
               <Link href="/about/" className="rounded-full border border-[var(--line)] bg-[rgba(251,246,236,0.72)] px-6 py-3 font-semibold text-[var(--ink)] transition hover:border-[var(--brass)]">

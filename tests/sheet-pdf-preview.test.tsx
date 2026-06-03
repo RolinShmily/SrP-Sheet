@@ -3,12 +3,15 @@ import { describe, expect, it } from "vitest";
 import { SheetPdfPreview } from "@/components/sheet-pdf-preview";
 
 describe("SheetPdfPreview", () => {
-  it("previews the first PDF page and opens the PDF in a new page", () => {
-    const html = renderToStaticMarkup(<SheetPdfPreview pdf="/assets/sheets/pdf/haru-dorobou.pdf" preview="/assets/sheets/pdf/haru-dorobou.pdf" />);
+  it("renders a PNG sheet preview and offers the PDF as a separate download", () => {
+    const html = renderToStaticMarkup(<SheetPdfPreview pdf="/assets/sheets/pdf/haru-dorobou.pdf" preview="/assets/sheets/previews/haru-dorobou.png" title="春泥棒" />);
 
-    expect(html).toContain("/assets/sheets/pdf/haru-dorobou.pdf#page=1");
+    expect(html).toContain("/assets/sheets/previews/haru-dorobou.png");
+    expect(html).toContain("alt=\"春泥棒 谱例预览\"");
+    expect(html).not.toContain("application/pdf");
+    expect(html).not.toContain("#page=1");
+    expect(html).toContain("download=\"\"");
+    expect(html).toContain("下载 PDF");
     expect(html).toContain("target=\"_blank\"");
-    expect(html).toContain("rel=\"noreferrer\"");
-    expect(html).toContain("新页面打开 PDF");
   });
 });

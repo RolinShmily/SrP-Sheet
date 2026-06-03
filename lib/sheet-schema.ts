@@ -4,6 +4,7 @@ const dateString = z.string().regex(/^\d{4}-\d{2}-\d{2}$/);
 const slug = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
 const assetPath = z.string().regex(/^\/assets\/sheets\/.+/);
 const pdfPath = z.string().regex(/^\/assets\/sheets\/.+\.pdf$/);
+const previewPath = z.string().regex(/^\/assets\/sheets\/.+\.(?:png|jpg|jpeg|webp)$/);
 
 export const bilibiliVideoSchema = z.object({
   bvid: z.string().regex(/^BV[0-9A-Za-z]{10}$/),
@@ -34,13 +35,13 @@ export const sheetFrontmatterSchema = z
     updatedAt: dateString,
     cover: assetPath.optional(),
     pdf: pdfPath.optional(),
-    preview: pdfPath.optional(),
+    preview: previewPath.optional(),
     images: z.array(sheetImageSchema).default([]),
     bilibili: bilibiliVideoSchema.optional(),
     rights: z.string().min(1)
   })
   .strict()
-  .transform((sheet) => ({ ...sheet, preview: sheet.preview ?? sheet.pdf }))
+  .transform((sheet) => sheet)
   .superRefine((sheet, ctx) => {
     if (sheet.updatedAt < sheet.publishedAt) {
       ctx.addIssue({ code: "custom", path: ["updatedAt"], message: "updatedAt must not be earlier than publishedAt" });

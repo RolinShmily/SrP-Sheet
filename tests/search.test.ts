@@ -19,7 +19,7 @@ const sheets = [
     hasVideo: false,
     hasPdf: true,
     pdf: "/assets/sheets/open-chord-warmup/sheet.pdf",
-    preview: "/assets/sheets/open-chord-warmup/sheet.pdf",
+    preview: "/assets/sheets/open-chord-warmup/preview.png",
     searchText: "open chord warmup complete chord switching score e standard"
   },
   {

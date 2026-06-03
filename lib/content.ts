@@ -37,13 +37,11 @@ export async function getAllSheets(): Promise<Sheet[]> {
         throw new Error(`Sheet slug mismatch: ${file.name} declares ${frontmatter.slug}`);
       }
 
-      if (!parsed.content.trim()) {
-        throw new Error(`Sheet body is empty: ${file.name}`);
-      }
 
-      const html = await markdownToHtml(parsed.content);
-      const excerpt = excerptFromMarkdown(parsed.content);
-      return { ...frontmatter, body: parsed.content, html, excerpt } satisfies Sheet;
+      const body = parsed.content.trim();
+      const html = body ? await markdownToHtml(body) : "";
+      const excerpt = body ? excerptFromMarkdown(body) : "";
+      return { ...frontmatter, body, html, excerpt } satisfies Sheet;
     })
   );
 

@@ -17,17 +17,19 @@ const validSheet = {
   updatedAt: "2026-06-02",
   cover: "/assets/sheets/minor-pentatonic-lick-01/cover.webp",
   pdf: "/assets/sheets/minor-pentatonic-lick-01/sheet.pdf",
+  preview: "/assets/sheets/minor-pentatonic-lick-01/preview.png",
   images: [{ src: "/assets/sheets/minor-pentatonic-lick-01/page-1.webp", alt: "Sheet page one" }],
   bilibili: { bvid: "BV1B7411m7LV", page: 1, start: 0, title: "Demo" },
   rights: "Original educational example."
 };
 
 describe("sheetFrontmatterSchema", () => {
-  it("parses valid complete sheet metadata and defaults preview to the PDF", () => {
+  it("parses valid complete sheet metadata with a PNG preview", () => {
     const parsed = sheetFrontmatterSchema.parse(validSheet);
 
     expect(parsed.slug).toBe("minor-pentatonic-lick-01");
-    expect(parsed.preview).toBe("/assets/sheets/minor-pentatonic-lick-01/sheet.pdf");
+    expect(parsed.preview).toBe("/assets/sheets/minor-pentatonic-lick-01/preview.png");
+    expect(() => sheetFrontmatterSchema.parse({ ...validSheet, preview: "/assets/sheets/minor-pentatonic-lick-01/sheet.pdf" })).toThrow();
   });
 
   it("accepts only lick and full-score content types", () => {

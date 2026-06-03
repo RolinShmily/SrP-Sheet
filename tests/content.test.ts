@@ -23,23 +23,28 @@ const realSongExpectations = [
 ] as const;
 
 describe("sheet content loader", () => {
-  it("loads seeded examples plus the user-provided real song catalog", async () => {
+  it("loads only PDF-backed sheets and allows empty Markdown bodies", async () => {
     const summaries = await getSheetSummaries();
     const slugs = summaries.map((sheet) => sheet.slug).sort();
 
-    expect(summaries).toHaveLength(22);
+    expect(summaries).toHaveLength(17);
     expect(slugs).toEqual(expect.arrayContaining([
+      "warmup-open-chords",
+      ...realSongExpectations.map((song) => song.slug)
+    ]));
+    expect(slugs).not.toEqual(expect.arrayContaining([
       "demo-with-bilibili",
       "fingerstyle-arp-01",
       "hybrid-picking-study",
       "minor-pentatonic-lick-01",
-      "percussive-strum-basic",
-      "warmup-open-chords",
-      ...realSongExpectations.map((song) => song.slug)
+      "percussive-strum-basic"
     ]));
-    expect(summaries.every((sheet) => typeof sheet.searchText === "string" && sheet.searchText.length > 0)).toBe(true);
-    expect(summaries.find((sheet) => sheet.slug === "demo-with-bilibili")?.hasVideo).toBe(true);
-    expect(summaries.find((sheet) => sheet.slug === "warmup-open-chords")?.hasPdf).toBe(true);
+    expect(summaries.every((sheet) => sheet.hasPdf && sheet.pdf && sheet.preview?.endsWith(".png"))).toBe(true);
+
+    const warmup = await getSheetBySlug("warmup-open-chords");
+    expect(warmup?.body).toBe("");
+    expect(warmup?.html).toBe("");
+    expect(warmup?.excerpt).toBe("");
   });
 
   it("maps each real song to validated Bilibili metadata and an existing PDF asset", async () => {
@@ -81,7 +86,7 @@ describe("sheet content loader", () => {
     expect("techniques" in facets).toBe(false);
   });
 
-  it("uses only simplified types and derives previews from PDFs", async () => {
+  it("uses only simplified types and PNG previews", async () => {
     const summaries = await getSheetSummaries();
 
     expect(new Set(summaries.map((sheet) => sheet.type))).toEqual(new Set(["full-score", "lick"]));
@@ -91,15 +96,15 @@ describe("sheet content loader", () => {
       const sheet = await getSheetBySlug(expected.slug);
 
       expect(sheet?.type).toBe("full-score");
-      expect(sheet?.preview).toBe(expected.pdf);
+      expect(sheet?.preview).toBe(expected.pdf.replace("/assets/sheets/pdf/", "/assets/sheets/previews/").replace(/\.pdf$/, ".png"));
     }
   });
 
-  it("returns a detail sheet with rendered markdown and excerpt", async () => {
-    const sheet = await getSheetBySlug("minor-pentatonic-lick-01");
+  it("returns a detail sheet with empty body fields", async () => {
+    const sheet = await getSheetBySlug("warmup-open-chords");
 
-    expect(sheet?.html).toContain("Playing Notes");
-    expect(sheet?.excerpt).toContain("minor pentatonic");
-    expect(sheet?.body).toContain("```tab");
+    expect(sheet?.html).toBe("");
+    expect(sheet?.excerpt).toBe("");
+    expect(sheet?.body).toBe("");
   });
 });
