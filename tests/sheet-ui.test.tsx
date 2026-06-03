@@ -13,7 +13,6 @@ const summary = {
   tuning: "E Standard",
   featured: true,
   publishedAt: "2026-06-03",
-  updatedAt: "2026-06-03",
   pdf: "/assets/sheets/pdf/haru-dorobou.pdf",
   preview: "/assets/sheets/previews/haru-dorobou.png",
   images: [],
@@ -55,5 +54,6 @@ describe("simplified sheet UI components", () => {
     expect(html).not.toContain("标签");
     expect(html).not.toContain("技巧");
     expect(html).not.toContain("用户提供谱例");
+    expect(html).not.toContain("更新");
   });
 });

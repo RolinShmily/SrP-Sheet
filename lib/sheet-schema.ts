@@ -31,7 +31,6 @@ export const sheetFrontmatterSchema = z
     bpm: z.number().positive().optional(),
     featured: z.boolean().default(false),
     publishedAt: dateString,
-    updatedAt: dateString,
     cover: assetPath.optional(),
     pdf: pdfPath.optional(),
     preview: previewPath.optional(),
@@ -39,13 +38,7 @@ export const sheetFrontmatterSchema = z
     bilibili: bilibiliVideoSchema.optional(),
     rights: z.string().min(1)
   })
-  .strict()
-  .transform((sheet) => sheet)
-  .superRefine((sheet, ctx) => {
-    if (sheet.updatedAt < sheet.publishedAt) {
-      ctx.addIssue({ code: "custom", path: ["updatedAt"], message: "updatedAt must not be earlier than publishedAt" });
-    }
-  });
+  .strict();
 
 export type BilibiliVideo = z.infer<typeof bilibiliVideoSchema>;
 export type SheetFrontmatter = z.infer<typeof sheetFrontmatterSchema>;

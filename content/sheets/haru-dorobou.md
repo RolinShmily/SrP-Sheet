@@ -5,10 +5,9 @@ type: "full-score"
 summary: "《春泥棒》的吉他谱 PDF 与 Bilibili 演示视频整理页，便于对照指法、段落和速度。"
 instrument: "acoustic-guitar"
 tuning: "E Standard"
-capo: null
+capo: 3品
 featured: true
 publishedAt: "2026-06-03"
-updatedAt: "2026-06-03"
 pdf: "/assets/sheets/pdf/haru-dorobou.pdf"
 preview: "/assets/sheets/previews/haru-dorobou.png"
 bilibili:

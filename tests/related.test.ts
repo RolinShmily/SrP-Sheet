@@ -12,7 +12,6 @@ function sheet(slug: string, overrides: Partial<SheetSummary> = {}): SheetSummar
     tuning: "E Standard",
     featured: false,
     publishedAt: "2026-06-02",
-    updatedAt: "2026-06-02",
     images: [],
     rights: "Original.",
     excerpt: slug,

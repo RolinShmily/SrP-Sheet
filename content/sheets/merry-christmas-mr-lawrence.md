@@ -3,12 +3,11 @@ title: "Merry Christmas, Mr.Lawrence"
 slug: "merry-christmas-mr-lawrence"
 type: "full-score"
 summary: "《Merry Christmas, Mr.Lawrence》的吉他谱 PDF 与 Bilibili 演示视频整理页，适合对照旋律声部和和声走向。"
-instrument: "acoustic-guitar"
+instrument: "electric-guitar"
 tuning: "E Standard"
 capo: null
 featured: true
 publishedAt: "2026-06-03"
-updatedAt: "2026-06-03"
 pdf: "/assets/sheets/pdf/merry-christmas-mr-lawrence.pdf"
 preview: "/assets/sheets/previews/merry-christmas-mr-lawrence.png"
 bilibili:

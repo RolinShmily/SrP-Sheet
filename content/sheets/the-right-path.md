@@ -8,7 +8,6 @@ tuning: "E Standard"
 capo: null
 featured: true
 publishedAt: "2026-06-03"
-updatedAt: "2026-06-03"
 pdf: "/assets/sheets/pdf/the-right-path.pdf"
 preview: "/assets/sheets/previews/the-right-path.png"
 bilibili:

@@ -44,7 +44,7 @@ export async function getAllSheets(): Promise<Sheet[]> {
     })
   );
 
-  return sheets.sort((left, right) => right.updatedAt.localeCompare(left.updatedAt) || left.title.localeCompare(right.title));
+  return sheets.sort((left, right) => right.publishedAt.localeCompare(left.publishedAt) || left.title.localeCompare(right.title));
 }
 
 export async function getSheetBySlug(slug: string): Promise<Sheet | null> {
@@ -65,7 +65,6 @@ export function toSheetSummary(sheet: Sheet): SheetSummary {
     bpm: sheet.bpm,
     featured: sheet.featured,
     publishedAt: sheet.publishedAt,
-    updatedAt: sheet.updatedAt,
     cover: sheet.cover,
     pdf: sheet.pdf,
     preview: sheet.preview,

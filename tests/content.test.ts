@@ -38,7 +38,7 @@ describe("sheet content loader", () => {
       "warmup-open-chords"
     ]));
     expect(summaries.every((sheet) => sheet.hasPdf && sheet.pdf && sheet.preview?.endsWith(".png"))).toBe(true);
-    expect(summaries.every((sheet) => !("source" in sheet))).toBe(true);
+    expect(summaries.every((sheet) => !("source" in sheet) && !("updatedAt" in sheet))).toBe(true);
 
     const first = await getSheetBySlug("haru-dorobou");
     expect(first?.body).toBe("");
@@ -77,7 +77,7 @@ describe("sheet content loader", () => {
     const facets = buildSheetFacets(await getSheetSummaries());
 
     expect(facets).toEqual({
-      types: ["full-score"],
+      types: ["full-score", "lick"],
       tunings: ["E Standard"]
     });
     expect("difficulties" in facets).toBe(false);
@@ -88,13 +88,13 @@ describe("sheet content loader", () => {
   it("uses only simplified types and PNG previews", async () => {
     const summaries = await getSheetSummaries();
 
-    expect(new Set(summaries.map((sheet) => sheet.type))).toEqual(new Set(["full-score"]));
-    expect(summaries.every((sheet) => !("difficulty" in sheet) && !("tags" in sheet) && !("techniques" in sheet) && !("source" in sheet))).toBe(true);
+    expect(new Set(summaries.map((sheet) => sheet.type))).toEqual(new Set(["full-score", "lick"]));
+    expect(summaries.every((sheet) => !("difficulty" in sheet) && !("tags" in sheet) && !("techniques" in sheet) && !("source" in sheet) && !("updatedAt" in sheet))).toBe(true);
 
     for (const expected of realSongExpectations) {
       const sheet = await getSheetBySlug(expected.slug);
 
-      expect(sheet?.type).toBe("full-score");
+      expect(["full-score", "lick"]).toContain(sheet?.type);
       expect(sheet?.preview?.endsWith(".png")).toBe(true);
       expect(existsSync(path.join(process.cwd(), "public", sheet!.preview!.slice(1)))).toBe(true);
     }

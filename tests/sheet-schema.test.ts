@@ -13,7 +13,6 @@ const validSheet = {
   bpm: 92,
   featured: true,
   publishedAt: "2026-06-02",
-  updatedAt: "2026-06-02",
   cover: "/assets/sheets/minor-pentatonic-lick-01/cover.webp",
   pdf: "/assets/sheets/minor-pentatonic-lick-01/sheet.pdf",
   preview: "/assets/sheets/minor-pentatonic-lick-01/preview.png",
@@ -54,8 +53,8 @@ describe("sheetFrontmatterSchema", () => {
     expect(() => sheetFrontmatterSchema.parse({ ...validSheet, slug: "Bad Slug" })).toThrow();
   });
 
-  it("rejects updatedAt earlier than publishedAt", () => {
-    expect(() => sheetFrontmatterSchema.parse({ ...validSheet, publishedAt: "2026-06-03", updatedAt: "2026-06-02" })).toThrow();
+  it("rejects removed updatedAt field", () => {
+    expect(() => sheetFrontmatterSchema.parse({ ...validSheet, updatedAt: "2026-06-02" })).toThrow();
   });
 
   it("rejects invalid PDF paths", () => {

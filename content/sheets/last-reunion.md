@@ -8,9 +8,8 @@ tuning: "E Standard"
 capo: null
 featured: false
 publishedAt: "2026-06-03"
-updatedAt: "2026-06-03"
 pdf: "/assets/sheets/pdf/last-reunion-san-ye-dong-jing-bu-tai-re.pdf"
-preview: "/assets/sheets/previews/last-reunion-san-ye-dong-jing-bu-tai-re.png"
+preview: "/assets/sheets/previews/last-reunion.png"
 bilibili:
   bvid: "BV1Pt4y1v7Bb"
   page: 10

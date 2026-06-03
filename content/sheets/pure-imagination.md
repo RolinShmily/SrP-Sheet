@@ -8,7 +8,6 @@ tuning: "E Standard"
 capo: null
 featured: false
 publishedAt: "2026-06-03"
-updatedAt: "2026-06-03"
 pdf: "/assets/sheets/pdf/pure-imagination.pdf"
 preview: "/assets/sheets/previews/pure-imagination.png"
 bilibili:

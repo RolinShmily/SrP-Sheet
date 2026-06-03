@@ -12,7 +12,7 @@ export function getRelatedSheets(current: SheetSummary, sheets: readonly SheetSu
         (current.hasPdf === sheet.hasPdf ? 1 : 0) +
         (current.hasVideo === sheet.hasVideo ? 1 : 0)
     }))
-    .sort((left, right) => right.score - left.score || right.sheet.updatedAt.localeCompare(left.sheet.updatedAt) || left.sheet.title.localeCompare(right.sheet.title))
+    .sort((left, right) => right.score - left.score || right.sheet.publishedAt.localeCompare(left.sheet.publishedAt) || left.sheet.title.localeCompare(right.sheet.title))
     .slice(0, limit)
     .map((entry) => entry.sheet);
 }

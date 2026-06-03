@@ -26,7 +26,6 @@ export function SheetMetaGrid({ sheet }: SheetMetaGridProps) {
     ["Capo", sheet.capo],
     ["BPM", sheet.bpm ? String(sheet.bpm) : undefined],
     ["发布", sheet.publishedAt],
-    ["更新", sheet.updatedAt]
   ].filter((item): item is [string, string] => Boolean(item[1]));
 
   return (

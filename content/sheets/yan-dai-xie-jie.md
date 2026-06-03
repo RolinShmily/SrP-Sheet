@@ -8,7 +8,6 @@ tuning: "E Standard"
 capo: null
 featured: false
 publishedAt: "2026-06-03"
-updatedAt: "2026-06-03"
 pdf: "/assets/sheets/pdf/yan-dai-xie-jie.pdf"
 preview: "/assets/sheets/previews/yan-dai-xie-jie.png"
 bilibili:
