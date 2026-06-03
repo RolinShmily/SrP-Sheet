@@ -2,7 +2,6 @@
 title: "最甜情歌"
 slug: "zui-tian-qing-ge"
 type: "full-score"
-source: "用户提供谱例"
 summary: "《最甜情歌》的吉他谱 PDF 与 Bilibili 演示视频整理页；该 PDF 与同组曲目共用。"
 instrument: "acoustic-guitar"
 tuning: "E Standard"

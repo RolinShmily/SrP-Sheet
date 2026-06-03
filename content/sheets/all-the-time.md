@@ -2,7 +2,6 @@
 title: "All the time"
 slug: "all-the-time"
 type: "full-score"
-source: "用户提供谱例"
 summary: "《All the time》的吉他谱 PDF 与 Bilibili 多 P 演示视频整理页，对应 p=6。"
 instrument: "acoustic-guitar"
 tuning: "E Standard"
@@ -11,7 +10,7 @@ featured: false
 publishedAt: "2026-06-03"
 updatedAt: "2026-06-03"
 pdf: "/assets/sheets/pdf/can-we-kiss-forever-all-the-time-booty-music-take-me-hand.pdf"
-preview: "/assets/sheets/previews/can-we-kiss-forever-all-the-time-booty-music-take-me-hand.png"
+preview: "/assets/sheets/previews/all-the-time.png"
 bilibili:
   bvid: "BV1Pt4y1v7Bb"
   page: 6

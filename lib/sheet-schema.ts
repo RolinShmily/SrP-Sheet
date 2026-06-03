@@ -23,7 +23,6 @@ export const sheetFrontmatterSchema = z
     title: z.string().min(1),
     slug,
     type: z.enum(["lick", "full-score"]),
-    source: z.string().min(1).optional(),
     summary: z.string().min(1),
     instrument: z.enum(["acoustic-guitar", "electric-guitar", "classical-guitar", "bass"]),
     tuning: z.string().min(1),

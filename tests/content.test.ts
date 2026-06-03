@@ -27,24 +27,23 @@ describe("sheet content loader", () => {
     const summaries = await getSheetSummaries();
     const slugs = summaries.map((sheet) => sheet.slug).sort();
 
-    expect(summaries).toHaveLength(17);
-    expect(slugs).toEqual(expect.arrayContaining([
-      "warmup-open-chords",
-      ...realSongExpectations.map((song) => song.slug)
-    ]));
+    expect(summaries).toHaveLength(16);
+    expect(slugs).toEqual(expect.arrayContaining(realSongExpectations.map((song) => song.slug)));
     expect(slugs).not.toEqual(expect.arrayContaining([
       "demo-with-bilibili",
       "fingerstyle-arp-01",
       "hybrid-picking-study",
       "minor-pentatonic-lick-01",
-      "percussive-strum-basic"
+      "percussive-strum-basic",
+      "warmup-open-chords"
     ]));
     expect(summaries.every((sheet) => sheet.hasPdf && sheet.pdf && sheet.preview?.endsWith(".png"))).toBe(true);
+    expect(summaries.every((sheet) => !("source" in sheet))).toBe(true);
 
-    const warmup = await getSheetBySlug("warmup-open-chords");
-    expect(warmup?.body).toBe("");
-    expect(warmup?.html).toBe("");
-    expect(warmup?.excerpt).toBe("");
+    const first = await getSheetBySlug("haru-dorobou");
+    expect(first?.body).toBe("");
+    expect(first?.html).toBe("");
+    expect(first?.excerpt).toBe("");
   });
 
   it("maps each real song to validated Bilibili metadata and an existing PDF asset", async () => {
@@ -78,7 +77,7 @@ describe("sheet content loader", () => {
     const facets = buildSheetFacets(await getSheetSummaries());
 
     expect(facets).toEqual({
-      types: ["full-score", "lick"],
+      types: ["full-score"],
       tunings: ["E Standard"]
     });
     expect("difficulties" in facets).toBe(false);
@@ -89,19 +88,20 @@ describe("sheet content loader", () => {
   it("uses only simplified types and PNG previews", async () => {
     const summaries = await getSheetSummaries();
 
-    expect(new Set(summaries.map((sheet) => sheet.type))).toEqual(new Set(["full-score", "lick"]));
-    expect(summaries.every((sheet) => !("difficulty" in sheet) && !("tags" in sheet) && !("techniques" in sheet))).toBe(true);
+    expect(new Set(summaries.map((sheet) => sheet.type))).toEqual(new Set(["full-score"]));
+    expect(summaries.every((sheet) => !("difficulty" in sheet) && !("tags" in sheet) && !("techniques" in sheet) && !("source" in sheet))).toBe(true);
 
     for (const expected of realSongExpectations) {
       const sheet = await getSheetBySlug(expected.slug);
 
       expect(sheet?.type).toBe("full-score");
-      expect(sheet?.preview).toBe(expected.pdf.replace("/assets/sheets/pdf/", "/assets/sheets/previews/").replace(/\.pdf$/, ".png"));
+      expect(sheet?.preview?.endsWith(".png")).toBe(true);
+      expect(existsSync(path.join(process.cwd(), "public", sheet!.preview!.slice(1)))).toBe(true);
     }
   });
 
   it("returns a detail sheet with empty body fields", async () => {
-    const sheet = await getSheetBySlug("warmup-open-chords");
+    const sheet = await getSheetBySlug("haru-dorobou");
 
     expect(sheet?.html).toBe("");
     expect(sheet?.excerpt).toBe("");

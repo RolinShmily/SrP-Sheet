@@ -31,7 +31,6 @@ export function SheetMetaGrid({ sheet }: SheetMetaGridProps) {
 
   return (
     <section className="rounded-[28px] border border-[var(--line)] bg-[rgba(251,246,236,0.82)] p-5 shadow-[var(--shadow-soft)]">
-      {sheet.source ? <p className="mb-4 text-sm font-semibold text-[var(--wood)]">{sheet.source}</p> : null}
       <dl className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         {items.map(([label, value]) => (
           <div key={label} className="rounded-2xl border border-[var(--line)] bg-[rgba(244,234,216,0.5)] p-3">

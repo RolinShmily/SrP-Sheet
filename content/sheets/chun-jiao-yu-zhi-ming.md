@@ -2,7 +2,6 @@
 title: "春娇与志明"
 slug: "chun-jiao-yu-zhi-ming"
 type: "full-score"
-source: "用户提供谱例"
 summary: "《春娇与志明》的吉他谱 PDF 与 Bilibili 演示视频整理页；该 PDF 与同组曲目共用。"
 instrument: "acoustic-guitar"
 tuning: "E Standard"

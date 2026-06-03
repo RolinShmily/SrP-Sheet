@@ -2,7 +2,6 @@
 title: "断线"
 slug: "duan-xian"
 type: "full-score"
-source: "用户提供谱例"
 summary: "《断线》的吉他谱 PDF 与 Bilibili 多 P 演示视频整理页，对应 p=8；该 PDF 与同组曲目共用。"
 instrument: "acoustic-guitar"
 tuning: "E Standard"

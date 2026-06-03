@@ -2,7 +2,6 @@
 title: "Pure imagination"
 slug: "pure-imagination"
 type: "full-score"
-source: "用户提供谱例"
 summary: "《Pure imagination》的吉他谱 PDF 与 Bilibili 多 P 演示视频整理页，对应 p=5。"
 instrument: "acoustic-guitar"
 tuning: "E Standard"

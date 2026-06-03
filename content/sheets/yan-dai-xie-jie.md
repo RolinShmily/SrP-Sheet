@@ -2,7 +2,6 @@
 title: "烟袋斜街"
 slug: "yan-dai-xie-jie"
 type: "full-score"
-source: "用户提供谱例"
 summary: "《烟袋斜街》的吉他谱 PDF 与 Bilibili 多 P 演示视频整理页，对应 p=3。"
 instrument: "acoustic-guitar"
 tuning: "E Standard"

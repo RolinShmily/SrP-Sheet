@@ -35,7 +35,6 @@ export function SheetCard({ sheet, featured = false }: SheetCardProps) {
           {sheet.title}
         </Link>
       </h3>
-      {sheet.source ? <p className="mt-2 text-sm font-semibold text-[var(--wood)]">{sheet.source}</p> : null}
       <p className="mt-3 text-sm leading-6 text-[var(--ink-muted)]">{sheet.summary}</p>
     </article>
   );

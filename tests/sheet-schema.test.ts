@@ -5,7 +5,6 @@ const validSheet = {
   title: "Minor Pentatonic Lick 01",
   slug: "minor-pentatonic-lick-01",
   type: "full-score",
-  source: "Original Study",
   summary: "A complete score with a downloadable PDF and video reference.",
   instrument: "electric-guitar",
   tuning: "E Standard",
@@ -42,6 +41,7 @@ describe("sheetFrontmatterSchema", () => {
     expect(() => sheetFrontmatterSchema.parse({ ...validSheet, difficulty: "intermediate" })).toThrow();
     expect(() => sheetFrontmatterSchema.parse({ ...validSheet, techniques: ["fingerstyle"] })).toThrow();
     expect(() => sheetFrontmatterSchema.parse({ ...validSheet, tags: ["real-song"] })).toThrow();
+    expect(() => sheetFrontmatterSchema.parse({ ...validSheet, source: "用户提供谱例" })).toThrow();
   });
 
   it("rejects missing required title", () => {

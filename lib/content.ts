@@ -9,7 +9,6 @@ const sheetsDirectory = path.join(process.cwd(), "content", "sheets");
 function createSearchText(sheet: Sheet): string {
   return [
     sheet.title,
-    sheet.source,
     sheet.summary,
     sheet.type,
     sheet.instrument,
@@ -58,7 +57,6 @@ export function toSheetSummary(sheet: Sheet): SheetSummary {
     title: sheet.title,
     slug: sheet.slug,
     type: sheet.type,
-    source: sheet.source,
     summary: sheet.summary,
     instrument: sheet.instrument,
     tuning: sheet.tuning,

@@ -2,7 +2,6 @@
 title: "Last Reunion"
 slug: "last-reunion"
 type: "full-score"
-source: "用户提供谱例"
 summary: "《Last Reunion》的吉他谱 PDF 与 Bilibili 多 P 演示视频整理页，对应 p=10。"
 instrument: "acoustic-guitar"
 tuning: "E Standard"

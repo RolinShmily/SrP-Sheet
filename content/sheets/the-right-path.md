@@ -2,7 +2,6 @@
 title: "The Right Path"
 slug: "the-right-path"
 type: "full-score"
-source: "用户提供谱例"
 summary: "《The Right Path》的吉他谱 PDF 与 Bilibili 多 P 演示视频整理页，对应 p=1。"
 instrument: "acoustic-guitar"
 tuning: "E Standard"

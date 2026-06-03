@@ -12,6 +12,8 @@ describe("SheetPdfPreview", () => {
     expect(html).not.toContain("#page=1");
     expect(html).toContain("download=\"\"");
     expect(html).toContain("下载 PDF");
+    expect(html).toContain("srp-primary-cta");
+    expect(html).not.toContain("text-[#fff8e8]");
     expect(html).toContain("target=\"_blank\"");
   });
 });

@@ -8,7 +8,6 @@ const summary = {
   title: "春泥棒",
   slug: "haru-dorobou",
   type: "full-score",
-  source: "用户提供谱例",
   summary: "完整谱例与演示视频。",
   instrument: "acoustic-guitar",
   tuning: "E Standard",
@@ -43,6 +42,7 @@ describe("simplified sheet UI components", () => {
     expect(html).not.toContain("入门");
     expect(html).not.toContain("进阶");
     expect(html).not.toContain("#");
+    expect(html).not.toContain("用户提供谱例");
   });
 
   it("renders detail metadata without difficulty, tags, or techniques", () => {
@@ -54,5 +54,6 @@ describe("simplified sheet UI components", () => {
     expect(html).not.toContain("难度");
     expect(html).not.toContain("标签");
     expect(html).not.toContain("技巧");
+    expect(html).not.toContain("用户提供谱例");
   });
 });
