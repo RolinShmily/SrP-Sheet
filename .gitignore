@@ -1,26 +1,57 @@
 # dependencies
 node_modules/
 
-# next.js
+# next.js / static export
 .next/
 out/
+next-env.d.ts
 
-# misc
-.DS_Store
-*.pem
+# cloudflare / wrangler
+.wrangler/
 wrangler-preview.log
-screenshot-*.png
-dev-server.log
 
-# debug
+# local env / secrets
+.env
+.env.*
+!.env.example
+*.pem
+
+# local docs and agent workspaces
+# Existing tracked docs remain tracked; this prevents new local planning/output docs from being added accidentally.
+docs/
+agents/
+.agents/
+.claude/
+
+# test and coverage output; keep source tests/ tracked
+coverage/
+.coverage/
+.nyc_output/
+.vitest/
+test-results/
+playwright-report/
+blob-report/
+*.lcov
+
+# logs and local debug captures
 npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dev-server.log
+*.log
 
-# env
-.env*.local
+# screenshots and temporary artifacts
+screenshot-*.png
+*.tmp
+tmp/
+temp/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
-
-# wrangler
-.wrangler/
