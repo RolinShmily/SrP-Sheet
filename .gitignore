@@ -18,7 +18,6 @@ wrangler-preview.log
 
 # local docs and agent workspaces
 # Existing tracked docs remain tracked; this prevents new local planning/output docs from being added accidentally.
-docs/
 agents/
 .agents/
 .claude/
